@@ -60,6 +60,7 @@ Forever = ss("This contract does not expire.") ;
 FullNamed str = ss(str.s);
 ValueAmount str = ss(str.s);
 Address str = ss(str.s);
+ZeroAdress = ss("0000000000");
 DavidDennision = ss("David Dennison") ;
 PeggyPeterson = ss("Peggy Peterson") ;
 Zero = ss("zero") ;

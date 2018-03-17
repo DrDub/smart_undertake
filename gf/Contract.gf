@@ -37,6 +37,7 @@ fun
   ValueAmount : String -> Amount ;
   Address : String -> Account ;
 
+  ZeroAddress : Account ;
   DavidDennison : FullName ;
   PeggyPeterson : FullName ;
   Zero : Amount ;

@@ -1291,7 +1291,9 @@ function fillSubTree(abstractTree, grammar) {
 					if (!grammar.abstract.types[newTypeCat]) {
 						grammar.abstract.addType(newTypeCat, [], node.type);
 						for (var i in grammar.concretes) {
-							grammar.concretes[i].addRule(newTypeCat, function(cs){ return new Arr(new Str(newType));});
+						        if(grammar.concretes[i].addRule) {
+  							grammar.concretes[i].addRule(newTypeCat, function(cs){ return new Arr(new Str(newType));});
+							}
 						}
 					}
 					node.name = newTypeCat;

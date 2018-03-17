@@ -299,8 +299,10 @@ GFConcrete.prototype.linearizeSyms = function (tree, tag) {
       cs.push(this.linearizeSyms(tree.args[i],tag + "-" + i)[0]);
     }
     var key = tree.name;
-    for (var i in cs) {
-      key = key + "_" + cs[i].fid
+      for (var i in cs) {
+	  if(cs[i]){
+	      key = key + "_" + cs[i].fid
+	  }
     }
 
     for (var i in this.lproductions[key]) {
