@@ -45,17 +45,17 @@ Closing = SS ;
 Termination = SS ;
 
 lin
-MkContract head body close = ss (head.s ++ RET ++ ["Agree to:"] ++ RET ++ body.s ++ RET ++ close.s) ;
-StandardHeading signs = ss (["The signers"] ++ signs.s) ;
-AccountsHeading signs accs = ss (["The signers"] ++ signs.s ++ ["with the following accounts:"] ++ RET ++ accs.s) ;
-TwoSigners sign1 sign2 = ss (sign1.s ++ "and" ++ sign2.s) ;
-NamedSigner full name = ss (full.s ++ (["now identified as"] | ["identified as"] | ["from now on referred as"]) ++ name.s) ;
-Payee = ss("PAYEE") ;
-Payer = ss("PAYER") ;
-Collector = ss("COLLECTOR") ;
-SourceAccount = ss("SOURCE") ;
-TargetAccount = ss("TARGET") ;
-CollectAccount = ss("COLLECT") ;
+MkContract head body close = ss (head.s ++ RET ++ ["同意:"] ++ RET ++ body.s ++ RET ++ close.s) ;
+StandardHeading signs = ss (["签约者"] ++ signs.s) ;
+AccountsHeading signs accs = ss (["签约者"] ++ signs.s ++ ["用这些账户:"] ++ RET ++ accs.s) ;
+TwoSigners sign1 sign2 = ss (sign1.s ++ ["和"] ++ sign2.s) ;
+NamedSigner full name = ss (full.s ++ ["这里叫"] ++ name.s) ;
+Payee = ss("收放") ;
+Payer = ss("付方") ;
+Collector = ss("收税圆") ;
+SourceAccount = ss("来源账户") ;
+TargetAccount = ss("终点账户") ;
+CollectAccount = ss("收税账户") ;
 ControlledAccount acc name = ss (acc.s ++ (["controlled by"] | ["under the control of"]) ++ name.s) ;
 NamedAccount acc name = ss (acc.s ++ (["identified as"] | ["here referred as"]) ++ name.s) ;
 ThreeAccounts acc1 acc2 acc3 = ss ("*" ++ acc1.s ++ RET ++ "*" ++ acc2.s ++ RET ++ "*" ++ acc3.s ++ RET) ;
@@ -69,14 +69,14 @@ Percentage per amount = ss(per.s ++ ["percentage of"] ++ amount.s) ;
 BalanceOverValue acc amount = ss(["the balance on account"] ++ acc.s ++ ["goes over"] ++ amount.s) ;
 Balance acc = ss(["the balance on account"] ++ acc.s) ;
 OnlyTermination term = term ;
-Forever = ss(["This contract does not expire."] | ["This contract has no expiration date."]) ;
+Forever = ss("这篇合同没有失效日期") ;
 FullNamed str = ss(str.s);
 ValueAmount str = ss(str.s);
 Address str = ss(str.s);
 ZeroAddress = ss("0000000000");
 DavidDennison = ss("David Dennison") ;
 PeggyPeterson = ss("Peggy Peterson") ;
-Zero = ss("zero") ;
-OneThousand = ss("one thousand") ;
+Zero = ss("零") ;
+OneThousand = ss("一千") ;
 }
 
