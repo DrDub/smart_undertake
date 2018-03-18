@@ -21,3 +21,13 @@ cp Contract.js js/editor/
 
 Then open js/editor/editor.html on your web-browser.
 
+
+Example
+-------
+
+Tax example:
+
+```
+linearize (MkContract (AccountsHeading  (TwoSigners (NamedSigner DavidDennison Payer) (NamedSigner PeggyPeterson Payee)) (ThreeAccounts (ControlledAccount (NamedAccount (Address "abc1") SourceAccount) Payer) (ControlledAccount (NamedAccount (Address "xyz2") TargetAccount) Payer) (ControlledAccount (NamedAccount (Address "aaabbbccc") CollectAccount) Payee))) (OnlyClaims  (ConditionClaims (BalanceOverValue SourceAccount Zero) (TwoClaims (TransferClaim SourceAccount (Percentage 95 (Balance SourceAccount)) TargetAccount) (TransferClaim SourceAccount (Percentage 5 (Balance SourceAccount)) CollectAccount)))) (OnlyTermination Forever))
+```
+

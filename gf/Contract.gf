@@ -4,7 +4,9 @@ flags startcat=Contract ;
 
 cat 
   Contract ; 
-  Heading ; Signers ; Signer ; Person ; FullName ; Name ; Account ;
+  Heading ;
+  Signers ; Signer ; FullName ; SignerName ; 
+  Accounts ; Account ; AccountName ;
   Body ; Claims ; Claim ; Condition ; Amount ;
   Closing ; Termination ;
 
@@ -12,23 +14,35 @@ fun
   MkContract : Heading -> Body -> Closing -> Contract ;
 
   StandardHeading   : Signers -> Heading ;
+  AccountsHeading   : Signers -> Accounts -> Heading ;
 
   TwoSigners : Signer -> Signer -> Signers ;
+  NamedSigner : FullName -> SignerName -> Signer ;
 
-  PersonSigns : Person -> Signer ;
+  Payee : SignerName ;
+  Payer : SignerName ;
+  Collector : SignerName ;
 
-  NamedAccount : FullName -> Name -> Account -> Person ;
+  SourceAccount : AccountName ;
+  TargetAccount : AccountName ;
+  CollectAccount : AccountName ;
 
-  Payee : Name ;
-  Payer : Name ;
-  Collector : Name ;
+  ThreeAccounts : Account -> Account -> Account -> Accounts;
+  ControlledAccount : Account -> SignerName -> Account ;
+  NamedAccount : Account -> AccountName -> Account ;
 
   OnlyClaims : Claims -> Body ;
 
+  OneClaim : Claim -> Claims ;
+  TwoClaims : Claim -> Claim -> Claims ;
   ThreeClaims : Claim -> Claim -> Claim -> Claims ;
-  TransferClaim : Condition -> Account -> Amount -> Account -> Claim ;
+  ConditionClaims : Condition -> Claims -> Claims ;
+  TransferClaim : AccountName -> Amount -> AccountName -> Claim ;
 
-  BalanceOverValue : Account -> Amount -> Condition ;
+  Percentage : Int -> Amount -> Amount ;
+  Balance : AccountName -> Amount ;
+
+  BalanceOverValue : AccountName -> Amount -> Condition ;
 
   OnlyTermination : Termination -> Closing ;
   Forever : Termination ;
