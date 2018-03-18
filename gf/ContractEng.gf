@@ -24,7 +24,7 @@ oper
     cnum cn => cn
     } ;
 
-  RET = "" ; -- &-
+  RET = "\n" ; -- &-
 
 lincat
 Contract = SS ;
@@ -45,9 +45,9 @@ Closing = SS ;
 Termination = SS ;
 
 lin
-MkContract head body close = ss (head.s ++ ":" ++ RET ++ body.s ++ RET ++ close.s) ;
+MkContract head body close = ss (head.s ++ RET ++	["Agree to:"] ++ RET ++ body.s ++ RET ++ close.s) ;
 StandardHeading signs = ss (["The signers"] ++ signs.s) ;
-AccountsHeading signs accs = ss (["The signers"] ++ signs.s ++ ["with the following accounts"] ++ accs.s) ;
+AccountsHeading signs accs = ss (["The signers"] ++ signs.s ++ ["with the following accounts:"] ++ RET ++ accs.s) ;
 TwoSigners sign1 sign2 = ss (sign1.s ++ "and" ++ sign2.s) ;
 NamedSigner full name = ss (full.s ++ ["now identified as"] ++ name.s) ;
 Payee = ss("PAYEE") ;
@@ -58,12 +58,12 @@ TargetAccount = ss("TARGET") ;
 CollectAccount = ss("COLLECT") ;
 ControlledAccount acc name = ss (acc.s ++ ["controlled by"] ++ name.s) ;
 NamedAccount acc name = ss (acc.s ++ ["identified as"] ++ name.s) ;
-ThreeAccounts acc1 acc2 acc3 = ss ("*" ++ acc1.s ++ RET ++ "*" ++ acc2.s ++ "*" ++ RET ++ "*" ++ acc3.s ++ RET) ;
+ThreeAccounts acc1 acc2 acc3 = ss ("*" ++ acc1.s ++ RET ++ "*" ++ acc2.s ++ RET ++ "*" ++ acc3.s ++ RET) ;
 OnlyClaims cl = cl ;
 OneClaim cl1 = cl1 ;
-TwoClaims cl1 cl2 = ss ("*" ++ cl1.s ++ RET ++ "*" ++ cl2.s ++ "*" ++ RET) ;
+TwoClaims cl1 cl2 = ss ("*" ++ cl1.s ++ RET ++ "*" ++ cl2.s ++ RET) ;
 ThreeClaims cl1 cl2 cl3 = ss ("*" ++ cl1.s ++ RET ++ "*" ++ cl2.s ++ "*" ++ RET ++ "*" ++ cl3.s ++ RET) ;
-ConditionClaims cond cl = ss("When" ++ cond.s ++ "," ++ cl.s) ;
+ConditionClaims cond cl = ss("When" ++ cond.s ++ "," ++ RET ++ cl.s) ;
 TransferClaim src amount tgt = ss (["transfer from"] ++ src.s ++ "to" ++ tgt.s ++ ["the amount of"] ++ amount.s ++ ".") ;
 Percentage per amount = ss(per.s ++ ["percentage of"] ++ amount.s) ;
 BalanceOverValue acc amount = ss(["the balance on account"] ++ acc.s ++ ["goes over"] ++ amount.s) ;
