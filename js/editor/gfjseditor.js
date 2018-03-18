@@ -391,7 +391,9 @@ function createLinearized(token) {
 		linearized.push("'normal'");
 	}
 	if (token == "&-") { linearized.push("<br />"); }
-    else { linearized.push(" onclick='nodeClick(\"", node.name, "\");'>", token.replace("String_Literal_", ""), "</span>"); }
+    else { linearized.push(" onclick='nodeClick(\"", node.name, "\");'>",
+			   token.replace("String_Literal_", "").replace("Int_Literal_", "").replace("Float_Literal_", ""),
+			   "</span>"); }
 	return linearized.join("");
 }
 

@@ -335,12 +335,18 @@ GFConcrete.prototype.linearizeSyms = function (tree, tag) {
 	    res.push(tree.args[0]);
 	}else{
 	
-      //console.log(tree);
-      //console.log(key);
+	    //console.log(tree);
+	    //console.log(key);
 	//var sym = new SymKS("Schtroumpf");
 	var sym = new SymKS(tree.name);
-	sym.tag = tag;
-	res.push({fid: -1, table: [[sym]]});
+	    sym.tag = tag;
+	    if(tree.name.startsWith("Int_Literal_")){
+		res.push({fid: -2, table: [[sym]]});
+	    }else if(tree.name.startsWith("Float_Literal_")){
+		res.push({fid: -3, table: [[sym]]});
+	    }else{
+		res.push({fid: -1, table: [[sym]]});
+	    }
 	}
     }
   }

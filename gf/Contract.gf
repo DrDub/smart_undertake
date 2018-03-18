@@ -48,7 +48,7 @@ fun
   Forever : Termination ;
   
   FullNamed : String -> FullName ;
-  ValueAmount : String -> Amount ;
+  ValueAmount : Float -> Amount ;
   Address : String -> Account ;
 
   ZeroAddress : Account ;
