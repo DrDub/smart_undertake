@@ -391,7 +391,7 @@ function createLinearized(token) {
 		linearized.push("'normal'");
 	}
 	if (token == "&-") { linearized.push("<br />"); }
-	else { linearized.push(" onclick='nodeClick(\"", node.name, "\");'>", token, "</span>"); }
+    else { linearized.push(" onclick='nodeClick(\"", node.name, "\");'>", token.replace("String_Literal_", ""), "</span>"); }
 	return linearized.join("");
 }
 
@@ -487,17 +487,10 @@ function showLanguages() {
 	var languages = new Array();
 	languages.push("<table class='language' id='languagesTable'>",
 					"<tr id='langs' class='language'>",
-					"<td class='language' id='EditorDan' title='Label Bulgarian' onclick='clickLanguage(\"\")'>Bulgarian</td>",
-					"<td class='language' id='EditorDan' title='Label Danish' onclick='clickLanguage(\"\")'>Danish</td>",
-					"<td class='language' id='EditorEng' title='Label English' onclick='clickLanguage(\"EditorEng\")'>English</td>",
-					"<td class='language' id='EditorFin' title='Label Finnish' onclick='clickLanguage(\"\")'>Finnish</td>",
+					"<td class='language' id='EditorEng' title='Label English' onclick='clickLanguage(\"EditorEng\")'>English</td>" /*,
 					"<td class='language' id='EditorFre' title='Label French' onclick='clickLanguage(\"EditorFre\")'>French</td>",
-					"<td class='language' id='EditorGer' title='Label German' onclick='clickLanguage(\"\")'>German</td>",
-					"<td class='language' id='EditorIta' title='Label Italian' onclick='clickLanguage(\"\")'>Italian</td>",
-					"<td class='language' id='EditorNor' title='Label Norwegian' onclick='clickLanguage(\"\")'>Norwegian</td>",
-					"<td class='language' id='EditorRus' title='Label Russian' onclick='clickLanguage(\"\")'>Russian</td>",
 					"<td class='language' id='EditorSpa' title='Label Spanish' onclick='clickLanguage(\"EditorSpa\")'>Spanish</td>",
-					"<td class='language' id='EditorSwe' title='Label Swedish' onclick='clickLanguage(\"EditorSwe\")'>Swedish</td></tr>",
+					"<td class='language' id='EditorSol' title='Label Swedish' onclick='clickLanguage(\"EditorSwe\")'>Swedish</td>"*/ + "</tr>",
 					"</table>");
 	return languages.join("");
 }
@@ -1292,7 +1285,11 @@ function fillSubTree(abstractTree, grammar) {
 						grammar.abstract.addType(newTypeCat, [], node.type);
 						for (var i in grammar.concretes) {
 						        if(grammar.concretes[i].addRule) {
-  							grammar.concretes[i].addRule(newTypeCat, function(cs){ return new Arr(new Str(newType));});
+  							    grammar.concretes[i].addRule(newTypeCat, function(cs){
+								return new Arr(new Str(newType));
+							    });
+							}else{
+							    console.error(grammar.concretes[i]);
 							}
 						}
 					}

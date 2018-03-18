@@ -299,10 +299,8 @@ GFConcrete.prototype.linearizeSyms = function (tree, tag) {
       cs.push(this.linearizeSyms(tree.args[i],tag + "-" + i)[0]);
     }
     var key = tree.name;
-      for (var i in cs) {
-	  if(cs[i]){
-	      key = key + "_" + cs[i].fid
-	  }
+    for (var i in cs) {
+	  key = key + "_" + cs[i].fid
     }
 
     for (var i in this.lproductions[key]) {
@@ -331,6 +329,19 @@ GFConcrete.prototype.linearizeSyms = function (tree, tag) {
         }
       }
       res.push(row);
+    }
+    if(res.length == 0){
+	if(tree.args.length == 1){
+	    res.push(tree.args[0]);
+	}else{
+	
+      //console.log(tree);
+      //console.log(key);
+	//var sym = new SymKS("Schtroumpf");
+	var sym = new SymKS(tree.name);
+	sym.tag = tag;
+	res.push({fid: -1, table: [[sym]]});
+	}
     }
   }
   
@@ -405,6 +416,9 @@ GFConcrete.prototype.tagIt = function (obj, tag) {
       return o;
     }
   }
+};
+GFConcrete.prototype.addRule = function (name, f) {
+    //this.rules[name] = f;
 };
 
 /* Utilities */

@@ -45,7 +45,7 @@ Closing = SS ;
 Termination = SS ;
 
 lin
-MkContract head body close = ss (head.s ++ RET ++	["Agree to:"] ++ RET ++ body.s ++ RET ++ close.s) ;
+MkContract head body close = ss (head.s ++ RET ++ ["Agree to:"] ++ RET ++ body.s ++ RET ++ close.s) ;
 StandardHeading signs = ss (["The signers"] ++ signs.s) ;
 AccountsHeading signs accs = ss (["The signers"] ++ signs.s ++ ["with the following accounts:"] ++ RET ++ accs.s) ;
 TwoSigners sign1 sign2 = ss (sign1.s ++ "and" ++ sign2.s) ;

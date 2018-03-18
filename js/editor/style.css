@@ -20,6 +20,7 @@ body {
 	border:1px solid gray;
    	float:left;
    	white-space: nowrap;
+   	overflow:auto;
 }
 
 #conFrame {
