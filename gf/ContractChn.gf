@@ -1,5 +1,5 @@
 --# -coding=UTF-8
-concrete ContractZh of Contract = {
+concrete ContractChn of Contract = {
 
 flags lexer=textlit ; unlexer=textlit ;
 
