@@ -477,11 +477,31 @@ function nodeClick(name) {
 	}
 	document.getElementById("actFrame").innerHTML = showActions();
 	document.getElementById("refFrame").innerHTML = "";
-	document.getElementById("messageFrame").innerHTML = showLanguages();
-	document.getElementById(selectedLanguage).className = "selected";
+        document.getElementById("messageFrame").innerHTML = '<span class="language selected" onclick="deployContract();">Deploy Contract</span>';
+	//document.getElementById(selectedLanguage).className = "selected";
+        selectedLanguage = "EditorEng";
 	applyLanguage();
 	drawTree();
 	drawLinearizedFrame();
+}
+
+function deployContract() {
+    var sol = document.getElementById("lineContractSol");
+    var gather = function(node) {
+	if(node.children.length == 0){
+	    return node.textContent + " ";
+	}else{
+	    var result = "";
+	    for(var i = 0; i<node.children.length; i++) {
+		result += gather(node.children[i]);
+	    }
+	    return result;
+	}
+    }
+    var win = window.open("", "Generated Contract",
+			  "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,"+
+			  "width=780,height=200,top="+(screen.height-400)+",left="+(screen.width-840));
+    win.document.body.innerHTML = "<html><head><title>Generated Contract</title></head><body><pre>" + gather(sol) + "</pre></body>";
 }
 
 // Shows the available languages for the editor
@@ -489,10 +509,9 @@ function showLanguages() {
 	var languages = new Array();
 	languages.push("<table class='language' id='languagesTable'>",
 					"<tr id='langs' class='language'>",
-					"<td class='language' id='EditorEng' title='Label English' onclick='clickLanguage(\"EditorEng\")'>English</td>" /*,
+					"<td class='language' id='EditorEng' title='Label English' onclick='clickLanguage(\"EditorEng\")'>English</td>",
 					"<td class='language' id='EditorFre' title='Label French' onclick='clickLanguage(\"EditorFre\")'>French</td>",
-					"<td class='language' id='EditorSpa' title='Label Spanish' onclick='clickLanguage(\"EditorSpa\")'>Spanish</td>",
-					"<td class='language' id='EditorSol' title='Label Swedish' onclick='clickLanguage(\"EditorSwe\")'>Swedish</td>"*/ + "</tr>",
+					"<td class='language' id='EditorSpa' title='Label Spanish' onclick='clickLanguage(\"EditorSpa\")'>Spanish</td></tr>",
 					"</table>");
 	return languages.join("");
 }
@@ -512,6 +531,7 @@ function clickLanguage(lang) {
 
 // Applies a language to the editor
 function applyLanguage() {
+    /*
 	var langsToLinearize = document.getElementById("languagesTable").getElementsByTagName("td");
 	for (var i = 0, j = langsToLinearize.length; i < j; i++) {
 		var absStr = langsToLinearize[i].getAttribute("title");
@@ -525,6 +545,7 @@ function applyLanguage() {
 			langsToLinearize[i].firstChild.nodeValue = lin;
 		}
 	}
+*/
 	var actionsToLinearize = document.getElementById("actionsTable").getElementsByTagName("td");
 	for (var i = 0, j = actionsToLinearize.length; i < j; i++) {
 		if (actionsToLinearize[i].className == "action") {
