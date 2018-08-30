@@ -84,6 +84,23 @@ Authors: Wang Ling, Dani Yogatama, Chris Dyer and Phil Blunsom (Google)
 
 ---
 
+Smart Contracts
+===============
+
+* Another term for "program"
+
+> * Run thousands of times at the mining nodes
+
+* Trust through replication and energy consumption
+
+> * Better than the alternative
+
+* Ethereum smart contracts
+
+> * Particular type of smart contract that runs in the Ethereum VM
+ 
+---
+
 Haskell's GF (Grammatical Framework)
 ====================================
 
