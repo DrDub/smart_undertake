@@ -1306,7 +1306,8 @@ aside {
             
             <section><h2>Using Haskell Grammatical Framework to Generate Solidity Code</h2>
 <p>Pablo Duboue, PhD</p>
-<p><a href="http://duboue.net">http://duboue.net</a></p></section>
+<p><a href="http://duboue.net">http://duboue.net</a></p>
+<p><a href="Textualization Software Ltd.">http://textualization.com</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1322,7 +1323,7 @@ aside {
             </aside>
             
             <aside class="page_number">
-              1/22
+              1/35
             </aside>
           </footer>
         </div>
@@ -1331,6 +1332,259 @@ aside {
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
         <div class="slide slide-2">
+          <div class="inner">
+            
+            <header><h1>This talk</h1></header>
+            
+            
+            <section><ul>
+<li>Exploratory work</li>
+</ul>
+<blockquote>
+<ul>
+<li>Inteded to elicit new ideas</li>
+</ul>
+</blockquote>
+<ul>
+<li>Bringing my expertise (human language technologies) into blockchain/smart contracts</li>
+</ul>
+<blockquote>
+<ul>
+<li>Building on a long tradition of research on transforming human language into programs</li>
+</ul>
+</blockquote>
+<ul>
+<li>Have spent time trying to make it as unabridged as possible</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-3">
+          <div class="inner">
+            
+            <header><h1>Background</h1></header>
+            
+            
+            <section><ul>
+<li>Blockchain</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>a distributed DB</p>
+</li>
+<li>
+<p>a solution to replace trust</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>Ethereum</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>the blockchain with data (representing money in "Ether", ETH)</p>
+</li>
+<li>
+<p>distributed computing platform ("smart contracts")</p>
+</li>
+</ul>
+</blockquote></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-4">
+          <div class="inner">
+            
+            <header><h1>Smart Contracts in Ethereum</h1></header>
+            
+            
+            <section><ul>
+<li>
+<p>Small programs that live on an address in the Ethereum blockchain</p>
+</li>
+<li>
+<p>Can be executed knowing the public address and paying for its execution</p>
+</li>
+<li>
+<p>It executes in all nodes in the network</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>The results must agree</p>
+</li>
+<li>
+<p>Ensures trust</p>
+</li>
+</ul>
+</blockquote></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h1>Motivating Example</h1></header>
+            
+            
+            <section><ul>
+<li>DAO crash</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>https://en.m.wikipedia.org/wiki/The_DAO_(organization)</p>
+</li>
+<li>
+<p>A decentralized organization that among other things held US$168m</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>A bug caused it to lose one third of that money (US$50m)</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>https://www.coindesk.com/understanding-dao-hack-journalists/</p>
+</li>
+<li>
+<p>Fork on the blockchain (Ethereum and Ethereum Classic)</p>
+</li>
+</ul>
+</blockquote></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h1>Why this happened?</h1></header>
+            
+            
+            <section><ul>
+<li>The DAO code was vulnerable </li>
+</ul>
+<blockquote>
+<ul>
+<li>It allowed people to spend the money before updating the balance of the account</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>These issues also happen in real-life contracts</p>
+</li>
+<li>
+<p>Would lawyers have realized of this bug if they would have been involved?</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-7">
           <div class="inner">
             
             <header><h1>What</h1></header>
@@ -1370,7 +1624,7 @@ aside {
             </aside>
             
             <aside class="page_number">
-              2/22
+              7/35
             </aside>
           </footer>
         </div>
@@ -1378,7 +1632,7 @@ aside {
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-3">
+        <div class="slide slide-8">
           <div class="inner">
             
             <header><h1>Why</h1></header>
@@ -1408,7 +1662,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
             </aside>
             
             <aside class="page_number">
-              3/22
+              8/35
             </aside>
           </footer>
         </div>
@@ -1416,7 +1670,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-4">
+        <div class="slide slide-9">
           <div class="inner">
             
             <header><h1>Who</h1></header>
@@ -1459,7 +1713,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
             </aside>
             
             <aside class="page_number">
-              4/22
+              9/35
             </aside>
           </footer>
         </div>
@@ -1467,87 +1721,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-5">
-          <div class="inner">
-            
-            <header><h1>Historical Note</h1></header>
-            
-            
-            <section><ul>
-<li>
-<p>NLIDB: Natural Language Interfaces to Databases, from human language to SQL.</p>
-</li>
-<li>
-<p>Siri: a mix of machine learning and grammatical approaches.</p>
-</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides.md">slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              5/22
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-6">
-          <div class="inner">
-            
-            <header><h1>Machine Learning approach</h1></header>
-            
-            
-            <section><ul>
-<li>
-<p>Classification to detect the API call</p>
-</li>
-<li>
-<p>Slot extraction (e.g., Conditional Random Fields) to identify the API arguments</p>
-</li>
-<li>
-<p>Some recent work on program generation, see for example:</p>
-</li>
-</ul>
-<p>http://www.aclweb.org/anthology/P17-1015</p>
-<p>Program Induction for Rationale Generation: Learning to Solve and Explain Algebraic Word Problems</p>
-<p>Authors: Wang Ling, Dani Yogatama, Chris Dyer and Phil Blunsom (Google)</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides.md">slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              6/22
-            </aside>
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide slide-7">
+        <div class="slide slide-10">
           <div class="inner">
             
             <header><h1>Smart Contracts</h1></header>
@@ -1592,7 +1766,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
             </aside>
             
             <aside class="page_number">
-              7/22
+              10/35
             </aside>
           </footer>
         </div>
@@ -1600,7 +1774,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-8">
+        <div class="slide slide-11">
           <div class="inner">
             
             <header><h1>Haskell's GF (Grammatical Framework)</h1></header>
@@ -1642,7 +1816,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
             </aside>
             
             <aside class="page_number">
-              8/22
+              11/35
             </aside>
           </footer>
         </div>
@@ -1650,7 +1824,45 @@ ADD GIN TO VERMOUTH GIVING MARTINI
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-9">
+        <div class="slide slide-12">
+          <div class="inner">
+            
+            <header><h1>Syntatic Grammars</h1></header>
+            
+            
+            <section><ul>
+<li>Usual grammars as taught in the school</li>
+</ul>
+<pre>
+Sentence = NounPhrase VerbPhrase
+NounPhrase = Determiner CommonNoun
+NounPhrase = ProperNoun
+VerbPhrase = Verb NounPhrase
+</pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-13">
           <div class="inner">
             
             <header><h1>Semantic Grammars</h1></header>
@@ -1687,7 +1899,7 @@ ADD GIN TO VERMOUTH GIVING MARTINI
             </aside>
             
             <aside class="page_number">
-              9/22
+              13/35
             </aside>
           </footer>
         </div>
@@ -1695,7 +1907,77 @@ ADD GIN TO VERMOUTH GIVING MARTINI
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-10">
+        <div class="slide slide-14">
+          <div class="inner">
+            
+            <header><h1>High level view</h1></header>
+            
+            
+            <section><table>
+<tr><th>Text</th><th>Categories</th></tr>
+<tr><td> ? Agree to: ? ?</td><td>Contract (Heading Body Closing)</td></tr>
+<tr><td> The signers ?</td><td>Heading (Signers)</td></tr>
+<tr><td> ? now identified as ?</td><td>Signer (FullName SignerName)</td></tr>
+</table></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-15">
+          <div class="inner">
+            
+            <header><h1>High level view (cont)</h1></header>
+            
+            
+            <section><table>
+<tr><th>Text</th><th>Categories</th></tr>
+<tr><td> When ?, ? </td><td>Body (Condition Claims)</td></tr>
+<tr><td> When the balance on account ? goes over ?</td><td>Condition (AccountName Amount)</td></tr>
+<tr><td> transfer from ? to ? the amount of ? </td><td>Condition (AccountName AccountName Amount)</td></tr>
+</table></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-16">
           <div class="inner">
             
             <header><h1>Abstract Grammar</h1></header>
@@ -1725,7 +2007,7 @@ cat
             </aside>
             
             <aside class="page_number">
-              10/22
+              16/35
             </aside>
           </footer>
         </div>
@@ -1733,7 +2015,7 @@ cat
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-11">
+        <div class="slide slide-17">
           <div class="inner">
             
             <header><h1>Abstract Grammar (cont)</h1></header>
@@ -1765,7 +2047,7 @@ fun
             </aside>
             
             <aside class="page_number">
-              11/22
+              17/35
             </aside>
           </footer>
         </div>
@@ -1773,7 +2055,7 @@ fun
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-12">
+        <div class="slide slide-18">
           <div class="inner">
             
             <header><h1>Concrete Grammar: Eng</h1></header>
@@ -1781,13 +2063,18 @@ fun
             
             <section><pre>
 lin
-MkContract head body close = ss (head.s ++ RET ++ ["Agree to:"] ++ RET ++ body.s ++ RET ++ close.s) ;
-Payee = ss("PAYEE") ;
-Payer = ss("PAYER") ;
-Collector = ss("COLLECTOR") ;
-NamedSigner full name = ss (full.s ++ (["now identified as"] | ["identified as"] | ["from now on referred as"]) ++ name.s) ;
-ConditionClaims cond cl = ss("When" ++ cond.s ++ "," ++ RET ++ cl.s) ;
-TransferClaim src amount tgt = ss (["transfer from"] ++ src.s ++ "to" ++ tgt.s ++ ["the amount of"] ++ amount.s ++ ".") ;
+MkContract head body close = 
+  head.s ++ RET ++ 
+  ["Agree to:"] ++ RET ++ 
+  body.s ++ RET ++ 
+  close.s ;
+Payee = "PAYEE" ;
+Payer = "PAYER" ;
+NamedSigner full name = full.s ++ 
+   (["now identified as"] | 
+    ["identified as"] | 
+    ["from now on referred as"]) ++ 
+   name.s) ;
 </pre></section>
             
           </div>
@@ -1804,7 +2091,7 @@ TransferClaim src amount tgt = ss (["transfer from"] ++ src.s ++ "to" ++ tgt.s +
             </aside>
             
             <aside class="page_number">
-              12/22
+              18/35
             </aside>
           </footer>
         </div>
@@ -1812,7 +2099,44 @@ TransferClaim src amount tgt = ss (["transfer from"] ++ src.s ++ "to" ++ tgt.s +
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-13">
+        <div class="slide slide-19">
+          <div class="inner">
+            
+            <header><h1>Concrete Grammar: Eng (cont.)</h1></header>
+            
+            
+            <section><pre>
+ConditionClaims cond cl = 
+   "When" ++ cond.s ++ "," ++ RET ++ cl.s ;
+TransferClaim src amount tgt = 
+   ["transfer from"] ++ src.s ++ 
+   "to" ++ tgt.s ++ 
+   ["the amount of"] ++ amount.s ++ "." ;
+</pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-20">
           <div class="inner">
             
             <header><h1>Concrete Grammar: Spa</h1></header>
@@ -1820,13 +2144,19 @@ TransferClaim src amount tgt = ss (["transfer from"] ++ src.s ++ "to" ++ tgt.s +
             
             <section><pre>
 lin
-MkContract head body close = ss (head.s ++ RET ++ ["Agree to:"] ++ RET ++ body.s ++ RET ++ close.s) ;
+MkContract head body close = 
+  head.s ++ RET ++ 
+  ["Se comprometen a:"] ++ RET ++ 
+  body.s ++ RET ++ 
+  close.s ;
 Payee = ss("TENEDOR") ;
 Payer = ss("PAGADOR") ;
-Collector = ss("RECOLECTOR") ;
-NamedSigner full name = ss (full.s ++ (["identificado como"] | ["identificada como"] | ["de ahora en mas referido como"]) ++ name.s) ;
-ConditionClaims cond cl = ss("Cuando" ++ cond.s ++ "," ++ RET ++ cl.s) ;
-TransferClaim src amount tgt = ss (["se transferira"] ++ src.s ++ "a" ++ tgt.s ++ [la suma de"] ++ amount.s ++ ".") ;
+NamedSigner full name = 
+  full.s ++ 
+  (["identificado como"] 
+  | ["identificada como"] 
+  | ["de ahora en mas referido como"]) ++ 
+  name.s ;
 </pre></section>
             
           </div>
@@ -1843,7 +2173,7 @@ TransferClaim src amount tgt = ss (["se transferira"] ++ src.s ++ "a" ++ tgt.s +
             </aside>
             
             <aside class="page_number">
-              13/22
+              20/35
             </aside>
           </footer>
         </div>
@@ -1851,24 +2181,142 @@ TransferClaim src amount tgt = ss (["se transferira"] ++ src.s ++ "a" ++ tgt.s +
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-14">
+        <div class="slide slide-21">
           <div class="inner">
             
-            <header><h1>Concrete Grammar: Sol</h1></header>
+            <header><h1>Concrete Grammar: Spa (cont.)</h1></header>
+            
+            
+            <section><pre>
+ConditionClaims cond cl = 
+  "Cuando" ++ cond.s ++ "," ++ RET ++ 
+  cl.s ;
+TransferClaim src amount tgt = 
+  ["se transferira de"] ++ src.s ++ 
+  "a" ++ tgt.s ++ 
+  [la suma de"] ++ amount.s ++ ".") ;
+</pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-22">
+          <div class="inner">
+            
+            <header><h1>Historical Note</h1></header>
+            
+            
+            <section><ul>
+<li>
+<p>NLIDB: Natural Language Interfaces to Databases, from human language to SQL.</p>
+</li>
+<li>
+<p>Siri: a mix of machine learning and grammatical approaches.</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-23">
+          <div class="inner">
+            
+            <header><h1>Machine Learning approach</h1></header>
+            
+            
+            <section><ul>
+<li>
+<p>Classification to detect the API call</p>
+</li>
+<li>
+<p>Slot extraction (e.g., Conditional Random Fields) to identify the API arguments</p>
+</li>
+<li>
+<p>Some recent work on program generation, see for example:</p>
+</li>
+</ul>
+<p>http://www.aclweb.org/anthology/P17-1015</p>
+<p>Program Induction for Rationale Generation: Learning to Solve and Explain Algebraic Word Problems</p>
+<p>Authors: Wang Ling, Dani Yogatama, Chris Dyer and Phil Blunsom (Google)</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-24">
+          <div class="inner">
+            
+            <header><h1>Concrete Grammar: Solidity</h1></header>
             
             
             <section><pre>
 lin
-MkContract head body close = ss (["pragma solidity ^0.4.18;"] ++ RET ++ 
-   ["contract GF_Contract{"] ++ RET ++ ["mapping(address => uint256) balance;"] ++ RET ++  
+MkContract head body close = 
+   ["pragma solidity ^0.4.18;"] ++ RET ++ 
+   ["contract GF_Contract{"] ++ RET ++ 
+   ["mapping(address => uint256) balance;"] ++ RET ++  
    ["function execute("] ++ head.s ++ [") public returns (bool) {"] ++ RET ++
    head.r ++ RET ++ RET ++
    body.s ++ RET ++
-   close.s ++ RET ++ "}" ++ RET ++ "}") ;
-ConditionClaims cond cl = ss(["if("] ++ cond.s ++ ["){"] ++ RET ++ cl.s ++ RET ++ ["}else{ revert(); }"]) ;
-TransferClaim src amount tgt = ss (
-["balance["] ++ src.s ++ ["] = balance["] ++ src.s ++ ["] -"] ++ amount.s ++ ";" ++ RET ++
-["balance["] ++ tgt.s ++ ["] = balance["] ++ tgt.s ++ ["] +"] ++ amount.s ++ ";" ++ RET) ;
+   close.s ++ RET ++ 
+   "}" ++ RET ++ 
+   "}"  ;
 </pre></section>
             
           </div>
@@ -1885,7 +2333,7 @@ TransferClaim src amount tgt = ss (
             </aside>
             
             <aside class="page_number">
-              14/22
+              24/35
             </aside>
           </footer>
         </div>
@@ -1893,7 +2341,49 @@ TransferClaim src amount tgt = ss (
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-15">
+        <div class="slide slide-25">
+          <div class="inner">
+            
+            <header><h1>Concrete Grammar: Solidity (cont.)</h1></header>
+            
+            
+            <section><pre>
+ConditionClaims cond cl = 
+  ["if("] ++ cond.s ++ ["){"] ++ RET ++ 
+      cl.s ++ RET ++ 
+  ["}else{ revert(); }"] ;
+TransferClaim src amount tgt =
+  ["balance["] ++ src.s ++ 
+      ["] = balance["] ++ src.s ++ ["] -"] ++ 
+      amount.s ++ ";" ++ RET ++
+  ["balance["] ++ tgt.s ++ 
+      ["] = balance["] ++ tgt.s ++ ["] +"] ++ 
+      amount.s ++ ";" ++ RET) ;
+</pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-26">
           <div class="inner">
             
             <header><h1>Compilation and Usage</h1></header>
@@ -1920,7 +2410,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              15/22
+              26/35
             </aside>
           </footer>
         </div>
@@ -1928,13 +2418,29 @@ cp Contract.js js/editor/
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-16">
+        <div class="slide slide-27">
           <div class="inner">
             
             <header><h1>Demo 1</h1></header>
             
             
-            <section><p>Demo: http://textualization.com/smart_undertake/</p></section>
+            <section><p>The signers Peggy Peterson now identified as COLLECTOR and David Dennison now identified as PAYEE with the following accounts: </p>
+<ul>
+<li>
+<p>0000000001 identified as TARGET controlled by COLLECTOR</p>
+</li>
+<li>
+<p>0000000002 identified as SOURCE controlled by PAYEE </p>
+</li>
+<li>
+<p>0000000003 identified as COLLECT controlled by COLLECTOR</p>
+</li>
+</ul>
+<p>Agree to: </p>
+<ul>
+<li>transfer from SOURCE to COLLECT the amount of the balance on account TARGET.</li>
+</ul>
+<p>This contract does not expire.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1950,7 +2456,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              16/22
+              27/35
             </aside>
           </footer>
         </div>
@@ -1958,13 +2464,26 @@ cp Contract.js js/editor/
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-17">
+        <div class="slide slide-28">
           <div class="inner">
             
             <header><h1>Demo 2</h1></header>
             
             
-            <section><p>Demo: http://textualization.com/smart_undertake/</p></section>
+            <section><pre>
+Contract> parse "The signers Peggy Peterson now identified as COLLECTOR and David Dennison now identified as PAYEE with the following accounts: * 0000000001 identified as TARGET controlled by COLLECTOR * 0000000002 identified as SOURCE controlled by PAYEE * 0000000003 identified as COLLECT controlled by COLLECTOR Agree to: transfer from SOURCE to COLLECT the amount of the balance on account TARGET . This contract does not expire."
+The parser failed at token 1: "The"
+MkContract (AccountsHeading 
+  (TwoSigners 
+    (NamedSigner PeggyPeterson Collector) 
+    (NamedSigner DavidDennison Payee)) 
+  (ThreeAccounts 
+    (ControlledAccount (NamedAccount (Adress "00000001") TargetAccout) Collector) 
+    (ControlledAccount (NamedAccount (Address "0000000000") SourceAccount) Payee) 
+    (ControlledAccount (NamedAccount (Address "0000000000") CollectAccount) Collector))) 
+  (OnlyClaims (OneClaim 
+    (TransferClaim SourceAccount (Balance TargetAccount) CollectAccount))) (OnlyTermination Forever)
+</pre></section>
             
           </div>
           <div class="presenter_notes">
@@ -1980,7 +2499,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              17/22
+              28/35
             </aside>
           </footer>
         </div>
@@ -1988,12 +2507,102 @@ cp Contract.js js/editor/
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-18">
+        <div class="slide slide-29">
           <div class="inner">
             
             <header><h1>Demo 3</h1></header>
             
             
+            <section><pre>
+Contract> linearize MkContract (AccountsHeading  (TwoSigners     (NamedSigner PeggyPeterson Collector)    (NamedSigner DavidDennison Payee)) (ThreeAccounts     (ControlledAccount (NamedAccount (Address "00000001") TargetAccount) Collector)     (ControlledAccount (NamedAccount (Address "00000002") SourceAccount) Payee)  (ControlledAccount (NamedAccount (Address "00000003") CollectAccount) Collector)))  (OnlyClaims (OneClaim     (TransferClaim SourceAccount (Balance TargetAccount) CollectAccount))) (OnlyTermination Forever)
+</pre>
+
+<p>Los abajo firmantes Peggy Peterson desde ahora identificado como RECOLECTOR y David Dennison desde ahora identificado como PAGADOR en posesión de las siguientes cuentas:</p>
+<ul>
+<li>
+<p>00000001 identificada como DESTINO controlada por RECOLECTOR</p>
+</li>
+<li>
+<p>00000002 identificada como FUENTE controlada por PAGADOR</p>
+</li>
+<li>
+<p>00000003 identificada como COLECTORA controlada por RECOLECTOR</p>
+</li>
+</ul>
+<p>Se comprometen a: transferir desde la cuenta FUENTE a la cuenta FUENTE a la cuenta COLECTORA en un monto de el balance en la cuenta DESTINO .</p>
+<p>Este contrato no tiene fecha de expiración.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-30">
+          <div class="inner">
+            
+            <header><h1>Demo 4</h1></header>
+            
+            
+            <section><pre>
+contract GF_Contract{
+  mapping(address => uint256) balance;
+ function execute( address target , address source , address collect ) public returns (bool) {
+ require( target != address(0));
+ require( source != address(0));
+ require( collect != address(0));
+
+ balance[ source ] = balance[ source ] - balance[ target ] ;
+ balance[ collect ] = balance[ collect ] + balance[ target ] ;
+
+ return true;
+}
+</pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/35
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-31">
+          <div class="inner">
+            
+            <header><h1>Demo 5</h1></header>
+            
+            
             <section><p>Demo: http://textualization.com/smart_undertake/</p></section>
             
           </div>
@@ -2010,7 +2619,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              18/22
+              31/35
             </aside>
           </footer>
         </div>
@@ -2018,7 +2627,7 @@ cp Contract.js js/editor/
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-19">
+        <div class="slide slide-32">
           <div class="inner">
             
             <header><h1>Feedback after Blockchain Meetup</h1></header>
@@ -2050,7 +2659,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              19/22
+              32/35
             </aside>
           </footer>
         </div>
@@ -2058,7 +2667,7 @@ cp Contract.js js/editor/
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-20">
+        <div class="slide slide-33">
           <div class="inner">
             
             <header><h1>Turning Smart Contracts into Words</h1></header>
@@ -2093,7 +2702,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              20/22
+              33/35
             </aside>
           </footer>
         </div>
@@ -2101,7 +2710,7 @@ cp Contract.js js/editor/
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-21">
+        <div class="slide slide-34">
           <div class="inner">
             
             <header><h1>Vancouver Blockchain Scene</h1></header>
@@ -2136,7 +2745,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              21/22
+              34/35
             </aside>
           </footer>
         </div>
@@ -2144,7 +2753,7 @@ cp Contract.js js/editor/
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-22">
+        <div class="slide slide-35">
           <div class="inner">
             
             <header><h1>Keeping in Touch with Pablo</h1></header>
@@ -2182,7 +2791,7 @@ cp Contract.js js/editor/
             </aside>
             
             <aside class="page_number">
-              22/22
+              35/35
             </aside>
           </footer>
         </div>
@@ -2203,128 +2812,206 @@ cp Contract.js js/editor/
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">What</a></th>
+        <th><a href="#slide2">This talk</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">Why</a></th>
+        <th><a href="#slide3">Background</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Who</a></th>
+        <th><a href="#slide4">Smart Contracts in Ethereum</a></th>
         <td><a href="#slide4">4</a></td>
       </tr>
       
       
       <tr id="toc-row-5">
-        <th><a href="#slide5">Historical Note</a></th>
+        <th><a href="#slide5">Motivating Example</a></th>
         <td><a href="#slide5">5</a></td>
       </tr>
       
       
       <tr id="toc-row-6">
-        <th><a href="#slide6">Machine Learning approach</a></th>
+        <th><a href="#slide6">Why this happened?</a></th>
         <td><a href="#slide6">6</a></td>
       </tr>
       
       
       <tr id="toc-row-7">
-        <th><a href="#slide7">Smart Contracts</a></th>
+        <th><a href="#slide7">What</a></th>
         <td><a href="#slide7">7</a></td>
       </tr>
       
       
       <tr id="toc-row-8">
-        <th><a href="#slide8">Haskell's GF (Grammatical Framework)</a></th>
+        <th><a href="#slide8">Why</a></th>
         <td><a href="#slide8">8</a></td>
       </tr>
       
       
       <tr id="toc-row-9">
-        <th><a href="#slide9">Semantic Grammars</a></th>
+        <th><a href="#slide9">Who</a></th>
         <td><a href="#slide9">9</a></td>
       </tr>
       
       
       <tr id="toc-row-10">
-        <th><a href="#slide10">Abstract Grammar</a></th>
+        <th><a href="#slide10">Smart Contracts</a></th>
         <td><a href="#slide10">10</a></td>
       </tr>
       
       
       <tr id="toc-row-11">
-        <th><a href="#slide11">Abstract Grammar (cont)</a></th>
+        <th><a href="#slide11">Haskell's GF (Grammatical Framework)</a></th>
         <td><a href="#slide11">11</a></td>
       </tr>
       
       
       <tr id="toc-row-12">
-        <th><a href="#slide12">Concrete Grammar: Eng</a></th>
+        <th><a href="#slide12">Syntatic Grammars</a></th>
         <td><a href="#slide12">12</a></td>
       </tr>
       
       
       <tr id="toc-row-13">
-        <th><a href="#slide13">Concrete Grammar: Spa</a></th>
+        <th><a href="#slide13">Semantic Grammars</a></th>
         <td><a href="#slide13">13</a></td>
       </tr>
       
       
       <tr id="toc-row-14">
-        <th><a href="#slide14">Concrete Grammar: Sol</a></th>
+        <th><a href="#slide14">High level view</a></th>
         <td><a href="#slide14">14</a></td>
       </tr>
       
       
       <tr id="toc-row-15">
-        <th><a href="#slide15">Compilation and Usage</a></th>
+        <th><a href="#slide15">High level view (cont)</a></th>
         <td><a href="#slide15">15</a></td>
       </tr>
       
       
       <tr id="toc-row-16">
-        <th><a href="#slide16">Demo 1</a></th>
+        <th><a href="#slide16">Abstract Grammar</a></th>
         <td><a href="#slide16">16</a></td>
       </tr>
       
       
       <tr id="toc-row-17">
-        <th><a href="#slide17">Demo 2</a></th>
+        <th><a href="#slide17">Abstract Grammar (cont)</a></th>
         <td><a href="#slide17">17</a></td>
       </tr>
       
       
       <tr id="toc-row-18">
-        <th><a href="#slide18">Demo 3</a></th>
+        <th><a href="#slide18">Concrete Grammar: Eng</a></th>
         <td><a href="#slide18">18</a></td>
       </tr>
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Feedback after Blockchain Meetup</a></th>
+        <th><a href="#slide19">Concrete Grammar: Eng (cont.)</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20">Turning Smart Contracts into Words</a></th>
+        <th><a href="#slide20">Concrete Grammar: Spa</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       
       
       <tr id="toc-row-21">
-        <th><a href="#slide21">Vancouver Blockchain Scene</a></th>
+        <th><a href="#slide21">Concrete Grammar: Spa (cont.)</a></th>
         <td><a href="#slide21">21</a></td>
       </tr>
       
       
       <tr id="toc-row-22">
-        <th><a href="#slide22">Keeping in Touch with Pablo</a></th>
+        <th><a href="#slide22">Historical Note</a></th>
         <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Machine Learning approach</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Concrete Grammar: Solidity</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Concrete Grammar: Solidity (cont.)</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Compilation and Usage</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Demo 1</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Demo 2</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">Demo 3</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">Demo 4</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">Demo 5</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Feedback after Blockchain Meetup</a></th>
+        <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Turning Smart Contracts into Words</a></th>
+        <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">Vancouver Blockchain Scene</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Keeping in Touch with Pablo</a></th>
+        <td><a href="#slide35">35</a></td>
       </tr>
       
       
